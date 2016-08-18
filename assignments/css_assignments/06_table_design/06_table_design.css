@@ -1,0 +1,10 @@
+
+table,tr,td{
+	border: 1px solid green;
+}
+
+#fir{
+	font-weight: 2px;
+    background-color: green;
+    color: white;
+}
