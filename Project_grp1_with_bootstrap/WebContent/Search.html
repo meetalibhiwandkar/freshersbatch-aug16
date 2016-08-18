@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+ <html class="no-js">
+<head>
+
+    <meta charset="utf-8">
+    <title>MRP</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/templatemo-misc.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/searchbar.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/Categories.js"></script>
+    <script src="js/register.js"></script>
+
+</head>
+<body onload="category_search();category_search1();proper_visit()">
+	<header class="site-header">
+		<div class="top-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						<div class="top-header-left">								
+            <div id="header">
+								<a href="#" data-toggle="modal" data-target="#myModal">Sign up</a>
+								<div class="modal fade" id="myModal" role="dialog">
+    								<div class="modal-dialog">    
+      									<!-- Modal content-->
+      									<div class="modal-content">
+        									<div class="modal-header">
+          										<button type="button" class="close" data-dismiss="modal">&times;</button>
+          										<h4 class="modal-title">Sign up</h4>
+        									</div>
+        								<div class="modal-body">
+          									<form class="form-horizontal" role="form" data-toggle="validator">
+    											<div class="form-group">
+     												<label class="control-label col-sm-2" for="email">Email:</label>
+      												<div class="col-sm-10">
+        												<input type="email" class="form-control" id="email" placeholder="Enter email" required>
+      												</div>
+    											</div>
+    											<div class="form-group">
+     												<label class="control-label col-sm-2" for="email">Username:</label>
+      												<div class="col-sm-10">
+        												<input type="text" class="form-control" id="uname" placeholder="Enter username" required>
+      												</div>
+    											</div>
+    											<div class="form-group">
+      												<label class="control-label col-sm-2" for="pwd">Password:</label>
+      												<div class="col-sm-10">
+        												<input type="password" class="form-control" id="password1" placeholder="Enter password" required>
+      												</div>
+    											</div>
+    											<div class="form-group">
+      												<label class="control-label col-sm-2" for="pwd">Re-enter Password:</label>
+      												<div class="col-sm-10">
+        												<input type="password" class="form-control" id="password2" placeholder="Enter password again" required>
+      												</div>
+    											</div>
+                          <div class="form-group">
+                              <div id="div_valid_signup" >
+                              
+                                </div>
+                          </div>  
+                          
+    											
+    											<div class="form-group">
+      												<div class="col-sm-offset-2 col-sm-10">
+        												<input type="button" class="btn btn-info" value="Register" onclick="add_user()">
+      												</div>
+    											</div>
+  											</form>
+        								</div>
+        								<div class="modal-footer">
+          									<button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+        								</div>
+      									</div>      
+    								</div>
+  								</div>
+  								<a href="#" data-toggle="modal" data-target="#myModal1">Log in</a>
+								<div class="modal fade" id="myModal1" role="dialog">
+    								<div class="modal-dialog">    
+      									<!-- Modal content-->
+      									<div class="modal-content">
+        									<div class="modal-header">
+          										<button type="button" class="close" data-dismiss="modal">&times;</button>
+          										<h4 class="modal-title">Log in</h4>
+        									</div>
+        								<div class="modal-body">
+          									<form class="form-horizontal" role="form">		 <div class="form-group">
+                              <div id="div_valid" >
+                              
+                                </div>
+                          </div> 			
+    											<div class="form-group">
+     												<label class="control-label col-sm-2" for="email">Username:</label>
+      												<div class="col-sm-10">
+        												<input type="text" class="form-control" id="uname1" placeholder="Enter username">
+      												</div>
+    											</div>
+                          
+    											<div class="form-group">
+      												<label class="control-label col-sm-2" for="pwd">Password:</label>
+      												<div class="col-sm-10">
+        												<input type="password" class="form-control" id="pass" placeholder="Enter password">
+      												</div>
+    											</div> 
+                            											
+    											
+    											<div class="form-group">
+      												<div class="col-sm-offset-2 col-sm-10">
+														<input type="button" class="btn btn-info" value="Submit" onclick="validate_user()">
+      												</div>
+    											</div>
+  											</form>
+        								</div>
+        								<div class="modal-footer">
+          									<button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+        								</div>
+      									</div>      
+    								</div>
+  								</div>							
+						</div>
+						</div>
+						<div id="header2">
+             				 <p id="welcome"></p>
+             				 <a id="logout" role="button" onclick="logout()"></a>
+            			</div>
+					</div> <!-- /.col-md-6 -->
+					<div class="col-md-6 col-sm-6">
+						<div class="social-icons">
+							<ul>
+								<li><a href="https://www.facebook.com/" class="fa fa-facebook"></a></li>
+                <li><a href="whatsapp.com" class="fa fa-whatsapp"></a></li>
+                <li><a href="https://twitter.com/" class="fa fa-twitter"></a></li>
+                <li><a href="https://in.linkedin.com/" class="fa fa-linkedin"></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div> <!-- /.social-icons -->
+					</div> <!-- /.col-md-6 -->
+				</div> <!-- /.row -->
+			</div> <!-- /.container -->
+		</div> <!-- /.top-header -->
+		<div class="main-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-6 col-xs-8">
+						<div class="logo">
+							<h1><a href="Home.html"><img src="images/logo2.jpg" class="img-circle" ></a></h1>
+						</div> <!-- /.logo -->
+					</div> <!-- /.col-md-4 -->
+					<div class="col-md-8 col-sm-6 col-xs-4">
+						
+					</div> <!-- /.col-md-8 -->
+				</div> <!-- /.row -->
+			</div> <!-- /.container -->
+		</div> <!-- /.main-header -->
+		<div class="main-nav">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-7">
+						<div class="list-menu">
+							<ul>
+								<li><a href="#">Search</a></li>
+								<li><a id="anchorPost" href="#" data-toggle="modal" data-target="#myModal2">Post-Free-Ad</a></li>
+								  <div class="modal fade" id="myModal2" role="dialog">
+    								<div class="modal-dialog">    
+      									<!-- Modal content-->
+      									<div class="modal-content">
+        									<div class="modal-header">
+          										<button type="button" class="close" data-dismiss="modal">&times;</button>
+          										<h4 class="modal-title">Post Free Ad</h4>
+        									</div>
+        								<div class="modal-body">
+          									<form class="form-horizontal" role="form">					
+    											<div class="form-group">
+     												<label class="control-label col-sm-2" for="fname">Add Title:</label>
+      												<div class="col-sm-10">
+        												<input type="text" class="form-control" id="adtitle" placeholder="Add Title">
+      												</div>
+    											</div>
+    											<div class="form-group">
+      												<label class="control-label col-sm-2" for="Category">Category:</label>
+      												<div class="col-sm-10">
+        												<select id="category" name="category" class="category-submitad"></select>
+      												</div>
+    											</div>    											
+    											<div class="form-group">
+      												<label class="control-label col-sm-2" for="ad_disc">Add Description:</label>
+      												<div class="col-sm-10">
+        												<input type="text" name="ad_disc" id="addescription" placeholder="Add Description">
+      												</div>
+    											</div> 
+    											<div class="form-group">
+      												<label class="control-label col-sm-2" for="ad_disc">Price:</label>
+      												<div class="col-sm-10">
+        												<input type="text" name="ad_disc" id="input-price" placeholder="Enter the price">
+      												</div>
+    											</div>
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="contact">Contact Number:</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="ad_disc" id="contact_no" placeholder="Enter your contact number">
+                              </div>
+                          </div>
+    											<div class="form-group">
+      												<label class="control-label col-sm-2" for="upload">Upload product image:</label>
+      												<div class="col-sm-10">
+              											<input type="text" name="pic" accept="image/*"  id="image_upload" required>
+      												</div>
+    											</div>
+
+    											<div class="form-group">
+      												<div class="col-sm-offset-2 col-sm-10">
+														<input type="button" class="btn btn-info" value="Submit" onclick="post_ad()">
+      												</div>
+    											</div>
+  											</form>
+        								</div>
+        								<div class="modal-footer">
+          									<button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+        								</div>
+      									</div>      
+    								</div>
+  								</div>
+							</ul>
+						</div> <!-- /.list-menu -->
+					</div> <!-- /.col-md-6 -->
+
+				</div> <!-- /.row -->
+			</div> <!-- /.container -->
+		</div> <!-- /.main-nav -->
+	</header> <!-- /.site-header -->
+
+<div class="content-section">
+	<div class="container" id="main-content">
+		<div id="hideme" class= "row">
+			<div class="alert alert-warning" role="alert">Please login for submitting advertisement.</div>
+		</div>
+		<div class="row">			
+			<ol class="breadcrumb">
+			  <li><a href="Home.html">Home</a></li>
+			  <li class="active">Search Data</li>
+			</ol>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="input-group" id="adv-search">
+					<input type="text" class="form-control" placeholder="Search.." id="keyword"/>
+					<div class="input-group-btn">
+						<div class="btn-group" role="group">
+							<div class="dropdown dropdown-lg">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+								<div class="dropdown-menu dropdown-menu-right" role="menu">
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+										<label for="filter">Select Category:</label>
+										<select class="form-control" id="category1">
+										</select>
+										</div>
+										<div class="form-group">
+										<label for="filter">Sort by Price:</label>
+										<select class="form-control" id="price">
+										<option value="HtoL">High to Low</option>
+										<option value="LtoH"selected>Low to High</option>
+										</select>
+										</div>
+										<div class="form-group">
+										<label for="filter">Sort by Date:</label>
+										<select class="form-control" id="date">
+										<option value="latest"selected>Latest</option>
+										<option value="oldest">Oldest</option>
+										</select>
+										</div>
+									</form>
+								</div>
+							</div>
+							<button type="button" class="btn btn-primary" onclick="searching()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		
+	</div>
+</div>
+
+    <footer class="site-footer">
+        <div class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer-widget">
+                            <h3 class="widget-title">About Us</h3>
+                            MRP Xoriant B.V. is a Dutch limited liability company that is registered at the Trade Register with the Chamber of Commerce in the Netherlands and located at Taurusavenue, 2132 LS Hoofddorp, The Netherlands. OLX India B.V. and its affiliates and / or branches (hereinafter together "MRP") provide a collection of online resources which include classified advertisements and forums (collectively, the "Service") on the website www.olx.in and related sites and the mobile application of the platform (collectively, the "Website").
+                            
+                        </div> <!-- /.footer-widget -->
+                    </div> <!-- /.col-md-3 -->
+                    <!-- /.col-md-3 -->
+		     <div class="col-md-3">
+		     </div>
+                    <div class="col-md-3">
+                        <div class="footer-widget">
+                            <h3 class="widget-title">Useful Links</h3>
+                            <ul>
+                                <li><a href="#">Our Shop</a></li>
+                                <li><a href="#">Partners</a></li>
+                                <li><a href="#">Gift Cards</a></li>
+                                <li><a href="about.html">Terms of use</a></li>
+                                <li><a href="help.html">Help</a></li>
+                            </ul>
+                        </div> <!-- /.footer-widget -->
+                    </div> <!-- /.col-md-2 -->
+                   
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.main-footer -->
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                       <span>| Copyright &copy; 2016 <a href="#">MRP</a> |Designed by: <a href="mailto:mrp@xoriant.com">MRP</a> </span>
+                        
+                    </div> <!-- /.col-md-12 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.bottom-footer -->
+    </footer> <!-- /.site-footer -->
+
+    
+    
+    <script src="js/vendor/jquery-1.10.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <script src="js/jquery.easing-1.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+</html>
